@@ -1,0 +1,26 @@
+# Python 3.13.0
+numpy==2.3.3
+pandas==2.3.2
+scikit-learn==1.7.2
+scipy==1.16.2
+matplotlib==3.10.6
+shap==0.51.0
+scikit-posthocs==0.12.0
+xgboost==3.1.2
+catboost==1.2.10
+lightgbm==4.6.0
+tabpfn==7.1.1
+tqdm==4.67.1
+
+# TensorFlow is imported only by data_utils.set_seed() to fix its global seed
+# (kept for consistency with the original experimental environment); no
+# TensorFlow model is trained in this repository.
+tensorflow==2.21.0
+
+# PyTorch is required by TabPFN. The reported results were produced with the
+# CUDA 11.8 build (torch 2.7.1+cu118), installed from the PyTorch index:
+#   pip install torch==2.7.1+cu118 --index-url https://download.pytorch.org/whl/cu118
+# On a machine without a GPU the plain CPU build below is sufficient; every
+# script instantiates TabPFNRegressor(device="cpu"), so the CPU build
+# reproduces the reported results.
+torch==2.7.1
